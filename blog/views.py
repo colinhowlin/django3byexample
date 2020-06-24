@@ -30,7 +30,7 @@ def post_detail(request, year, month, day, post):
 
     new_comment = None
 
-    if request.Method == 'POST':
+    if request.method == 'POST':
         # A comment was posted
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():

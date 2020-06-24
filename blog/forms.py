@@ -12,7 +12,8 @@ class EmailPostForm(forms.Form):
 
 
 class CommentForm(forms.ModelForm):
-    """Form to post comments to a blog post"""
+    """Form to post comments to a blog post. Inherits from ModelForm
+       which allows us to define form fields from model attributes"""
     class Meta:
         model = Comment
         fields = ('name', 'email', 'body')

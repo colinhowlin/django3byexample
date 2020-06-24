@@ -58,12 +58,18 @@ class Post(models.Model):
 
 class Comment(models.Model):
     """Model for comments on blog posts"""
+
+    # Post that the comment belongs to - foreign key
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    # Name of person who posted the comment
     name = models.CharField(max_length=80)
     email = models.EmailField()
+    # The body of the comment
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    # Whether the post is active or not  
+    # to allow manual deactivation of inappropriate comments
     active = models.BooleanField(default=True)
 
     class Meta:
