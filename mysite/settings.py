@@ -122,8 +122,9 @@ STATIC_URL = '/static/'
 
 
 # Email SMTP configuration
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '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'
-EMAIL_PORT = 465
-EMAIL_USE_SSL = True
+#EMAIL_HOST = 'smtp.sendgrid.net'
+#EMAIL_HOST_USER = 'apikey'
+#EMAIL_HOST_PASSWORD = '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'
+#EMAIL_PORT = 465
+#EMAIL_USE_SSL = True
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
