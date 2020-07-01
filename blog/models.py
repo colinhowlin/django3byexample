@@ -4,6 +4,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
+from taggit.managers import TaggableManager
 
 
 # Custom model manager for querying published posts
@@ -39,6 +40,9 @@ class Post(models.Model):
     objects = models.Manager()
     # Custom model manager for published posts
     published = PublishedManager()
+
+    # Instantiate taggit tag manager for blog posts
+    tags = TaggableManager()
 
     def get_absolute_url(self):
         """Returns the absolute URL of the blog post"""
