@@ -3,3 +3,5 @@ mysite/__pycache__/*
 blog/__pycache__/*
 blog/migrations/__pycache__/*
 .vscode
+root_site/__pycache__/*
+root_site/migrations/__pycache__/*
